@@ -1,0 +1,4 @@
+project_id = "voyafpbefctjdvurhdwb"
+
+[functions.blendly-proxy]
+verify_jwt = false

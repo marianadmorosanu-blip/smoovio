@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 40% 98%;
+    --foreground: 155 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 155 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 155 25% 12%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 76% 62%;
+
+    --secondary: 38 35% 95%;
+    --secondary-foreground: 155 25% 16%;
+
+    --muted: 40 20% 95%;
+    --muted-foreground: 150 10% 40%;
+
+    --accent: 345 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 25% 90%;
+    --input: 35 25% 90%;
+    --ring: 142 71% 45%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 155 25% 16%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 94%;
+    --sidebar-accent-foreground: 155 25% 16%;
+    --sidebar-border: 35 25% 90%;
+    --sidebar-ring: 142 71% 45%;
+
+    /* Custom tokens */
+    --sage: 150 35% 75%;
+    --sage-light: 150 40% 94%;
+    --berry: 345 70% 60%;
+    --berry-light: 345 60% 95%;
+    --sand: 38 35% 95%;
+    --sand-dark: 35 20% 55%;
+    --leaf: 142 71% 45%;
+    --leaf-light: 142 60% 94%;
+    --leaf-dark: 148 60% 28%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 76% 62%));
+    --gradient-fresh: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(160 70% 55%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(40 40% 98%) 0%, hsl(142 40% 96%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(150 30% 20% / 0.06), 0 4px 16px -4px hsl(150 30% 20% / 0.04);
+    --shadow-card: 0 4px 20px -4px hsl(150 40% 20% / 0.08), 0 2px 6px -2px hsl(150 40% 20% / 0.04);
+    --shadow-elevated: 0 12px 32px -8px hsl(142 50% 25% / 0.18);
+    --shadow-button: 0 4px 14px -4px hsl(142 71% 45% / 0.45);
+  }
+
+  .dark {
+    --background: 150 10% 8%;
+    --foreground: 40 15% 95%;
+    --card: 150 10% 11%;
+    --card-foreground: 40 15% 95%;
+    --popover: 150 10% 11%;
+    --popover-foreground: 40 15% 95%;
+    --primary: 145 20% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 10% 18%;
+    --secondary-foreground: 40 15% 90%;
+    --muted: 150 10% 18%;
+    --muted-foreground: 40 10% 60%;
+    --accent: 345 30% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 10% 20%;
+    --input: 150 10% 20%;
+    --ring: 145 20% 50%;
+    --sidebar-background: 150 10% 10%;
+    --sidebar-foreground: 40 15% 90%;
+    --sidebar-primary: 145 20% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 10% 15%;
+    --sidebar-accent-foreground: 40 15% 90%;
+    --sidebar-border: 150 10% 20%;
+    --sidebar-ring: 145 20% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .shadow-button { box-shadow: var(--shadow-button); }
+
+  .bg-gradient-primary { background-image: var(--gradient-primary); }
+  .bg-gradient-fresh { background-image: var(--gradient-fresh); }
+  .bg-gradient-soft { background-image: var(--gradient-soft); }
+}
